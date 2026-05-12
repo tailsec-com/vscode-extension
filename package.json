@@ -1,0 +1,67 @@
+{
+  "name": "tailsec-security",
+  "displayName": "Tailsec Security Scanner",
+  "description": "Real-time security scanning for Kubernetes, Terraform, Docker, Secrets, and more",
+  "version": "0.1.0",
+  "publisher": "tailsec",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Developer", "Linters"],
+  "activationEvents": ["onLanguage:kubernetes", "onLanguage:hcl", "onLanguage:yaml", "onLanguage:dockerfile", "workspaceContains:**/Dockerfile*"],
+  "main": "./dist/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tailsec-com/vscode-extension"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "tailsec.scan",
+        "title": "Tailsec: Run Security Scan",
+        "category": "Tailsec"
+      },
+      {
+        "command": "tailsec.scanWorkspace",
+        "title": "Tailsec: Scan Entire Workspace",
+        "category": "Tailsec"
+      },
+      {
+        "command": "tailsec.enableRealtime",
+        "title": "Tailsec: Enable Real-time Scanning",
+        "category": "Tailsec"
+      }
+    ],
+    "configuration": {
+      "title": "Tailsec",
+      "properties": {
+        "tailsec.scanners": {
+          "type": "array",
+          "default": ["k8s", "terraform", "docker", "secrets"],
+          "description": "Scanners to run"
+        },
+        "tailsec.severity": {
+          "type": "string",
+          "default": "critical",
+          "enum": ["critical", "high", "medium", "low"],
+          "description": "Minimum severity to report"
+        },
+        "tailsec.realtime": {
+          "type": "boolean",
+          "default": false,
+          "description": "Scan on save"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0",
+    "vscode-test": "^1.0.0"
+  }
+}
