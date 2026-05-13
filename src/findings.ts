@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import * as vscode from 'vscode';
 import { Finding } from './scanner';
 

@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 import { execSync } from 'child_process';
 import * as path from 'path';
 import * as vscode from 'vscode';

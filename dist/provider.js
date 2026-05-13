@@ -1,3 +1,8 @@
+/**
+ * @license MIT
+ * Copyright (c) 2024 Tailsec
+ */
+
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CodeLensProvider = void 0;
