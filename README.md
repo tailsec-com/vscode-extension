@@ -25,3 +25,5 @@ Security scanning directly in VS Code.
   "tailsec.realtime": true
 }
 ```
+
+[![advertisement](https://ads.servead.net/i/064a6fb9-bce3-467f-883c-8d37676e635a.svg)](https://ads.servead.net/c/064a6fb9-bce3-467f-883c-8d37676e635a)
